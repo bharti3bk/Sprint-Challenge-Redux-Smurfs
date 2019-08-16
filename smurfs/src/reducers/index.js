@@ -1,7 +1,7 @@
 /*
   Be sure to import in all of the action types from `../actions` 
 */ 
-import {DELETE, ADD , FAILURE} from '../actions'
+import {DELETE, ADD , FAILURE , GET} from '../actions'
 
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
@@ -15,7 +15,7 @@ import {DELETE, ADD , FAILURE} from '../actions'
  }
 */ 
 const initialState = {
-  smurfs : []
+  smurfs : [""]
 }
 
 /*
@@ -38,7 +38,14 @@ export const reducer = (state = initialState , action) => {
         ...state,
         smurfs: [ ...action.payload ]
       }
-    } 
+    }   
+    
+    case GET : {
+      return {
+        ...state, 
+        smurfs: [ ...action.payload ]
+      }
+    }
     default: 
     return state;
   }

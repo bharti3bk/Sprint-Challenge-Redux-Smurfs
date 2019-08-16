@@ -7,7 +7,8 @@
    deleteSmurf,
    DELETE,
    ADD,
-   FAILURE
+   FAILURE,
+   GET
  } from '../actions/smrufActionCreator'
 
 /*

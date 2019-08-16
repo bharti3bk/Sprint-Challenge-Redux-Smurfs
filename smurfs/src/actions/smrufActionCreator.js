@@ -1,7 +1,8 @@
 import axios from 'axios';
 export const DELETE = 'DELELE';
 export const ADD = 'ADD';
-export const FAILURE = 'FAILURE';
+export const FAILURE = 'FAILURE'; 
+export const GET = 'GET';
 
 export const addSmurf = (smurf) => {
     return dispach => {
@@ -23,6 +24,18 @@ export const deleteSmurf = (smurfId) => {
         .catch(error => {
                 dispach({ type: FAILURE, payload: error})
         })
+    }
+}  
+
+export const getSmurf = () => {
+    return dispach => {
+       axios.get(`http://localhost:3333/smurfs`) 
+       .then(res => {
+           dispach({type : GET , payload: res.data})
+       })  
+       .catch(error => {
+           dispach({type: FAILURE, payload:error})
+       })
     }
 }
 
