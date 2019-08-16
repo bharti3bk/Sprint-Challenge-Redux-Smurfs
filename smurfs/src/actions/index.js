@@ -5,7 +5,7 @@
  export {
    addSmurf,
    deleteSmurf,
-   START,
+   DELETE,
    ADD,
    FAILURE
  } from '../actions/smrufActionCreator'

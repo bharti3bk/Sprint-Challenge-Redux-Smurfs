@@ -18,7 +18,7 @@ function SmurfForm() {
                 <label id="height">Height</label>
                 <Field type="text" name="height" placeholder="height" />
             </div>
-            <button className="ui button" type="submit" disabled={isSubmitting}>Submit</button>
+            <button className="ui button" type="submit">Submit</button>
         </Form>
     )
 }
