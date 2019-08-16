@@ -3,7 +3,8 @@
   Be sure to export each action type so you can pull it into your reducer
 */ 
  export {
-   getResponse,
+   addSmurf,
+   deleteSmurf,
    START,
    ADD,
    FAILURE

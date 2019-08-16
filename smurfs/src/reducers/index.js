@@ -1,7 +1,7 @@
 /*
   Be sure to import in all of the action types from `../actions` 
 */ 
-import {START, ADD , FAILURE} from '../actions'
+import {DELETE, ADD , FAILURE} from '../actions'
 
 /*
  Your initial/default state for this project could *Although does not have to* look a lot like this
@@ -15,8 +15,7 @@ import {START, ADD , FAILURE} from '../actions'
  }
 */ 
 const initialState = {
-  smurfs : [] ,
-  addingSmurf: false 
+  smurfs : []
 }
 
 /*
@@ -28,19 +27,17 @@ const initialState = {
 */ 
 export const reducer = (state = initialState , action) => {
   switch(action.type) {
-    case START : { 
+    case DELETE : { 
       return {
-        ...state , 
-        addingSmurf : true
-
+        ...state ,
+        smurfs: [...action.payload ]
       }
     }  
     case ADD : {
-    return {
-      ...state,
-      addingSmurf : false,
-      smurfs: [...action.payload]
-    }
+      return {
+        ...state,
+        smurfs: [ ...action.payload ]
+      }
     } 
     default: 
     return state;
